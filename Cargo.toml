@@ -1,0 +1,25 @@
+[package]
+name = "halts"
+version = "0.1.0"
+authors = ["Bion Howard <bion@atomiclogic.com>"]
+edition = "2021"
+description = "A library to decide if Rust functions halt, loop, or create paradoxes."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/bionicles/halts"
+readme = "README.md"
+keywords = ["halt", "loop", "paradox"]
+categories = ["algorithms", "mathematics"]
+
+[dependencies]
+ast_from_path = { path = "./ast_from_path" }
+syn = {version="2.0.53", features = ["full"]}
+quote = "1.0.35"
+regex = "1.0"
+
+[lib]
+name = "halts"
+path = "src/lib.rs"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
